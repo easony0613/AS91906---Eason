@@ -1,0 +1,252 @@
+{
+  "question1": {
+    "question": "What is Easons favorite game? ",
+    "choices": [
+      "Valorant",
+      "School work",
+      "Mobile legends",
+      "Wait Eason plays games? "
+    ],
+    "answer": "Mobile legends"
+  },
+  "question2": {
+    "question": "Who is Easons favorite youtuber?",
+    "choices": [
+      "Mr Beast",
+      "Markiplier",
+      "Jacksepticeye",
+      "Manlybadass Hero"
+    ],
+    "answer": "Jacksepticeye"
+  },
+  "question3": {
+    "question": "What is Easons favorite food? ",
+    "choices": [
+      "Fried Chicken",
+      "Noodles",
+      "Rice",
+      "Sushi"
+    ],
+    "answer": "Sushi"
+  },
+  "question4": {
+    "question": "Which teacher is Eason most afraid of? ",
+    "choices": [
+      "Mr Chennoth",
+      "Mrs Liang",
+      "Mr Irani",
+      "Mrs Kaur"
+    ],
+    "answer": "Mr irani"
+  },
+  "question5": {
+    "question": "What is Easons favorite anime? ",
+    "choices": [
+      "Dr Stone",
+      "Jjk",
+      "Code Geass",
+      "Fairy Tail"
+    ],
+    "answer": "Dr stone"
+  },
+  "question6": {
+    "question": "What is Easons favorite hero in mlbb? ",
+    "choices": [
+      "Ling",
+      "Angela",
+      "Clint",
+      "Fanny"
+    ],
+    "answer": "Ling"
+  },
+  "question7": {
+    "question": "What nationality is eason? ",
+    "choices": [
+      "Chinese",
+      "Korean",
+      "Japanese",
+      "Vietnamese"
+    ],
+    "answer": "Chinese"
+  },
+  "question8": {
+    "question": "What language is eason learning on duolingo?",
+    "choices": [
+      "Korean",
+      "Japanese",
+      "German",
+      "What Is Duolingo?"
+    ],
+    "answer": "Korean"
+  },
+  "question9": {
+    "question": "Which burgerking does eason work at? ",
+    "choices": [
+      "Manukau",
+      "Botany",
+      "Eason Works At Bk?!",
+      "Pakuranga"
+    ],
+    "answer": "Botany"
+  },
+  "question10": {
+    "question": "What does eason always say randomly?",
+    "choices": [
+      "Skidibi Toilet",
+      "English Or Spanish",
+      "I Love Calculus",
+      "Aaaa"
+    ],
+    "answer": "Skidibi toilet"
+  },
+  "question11": {
+    "question": "Which council leader is eason in howick college",
+    "choices": [
+      "Bacot House Leader",
+      "Hauora Council Leader",
+      "Cultural Council Leader",
+      "Academic Council Leader"
+    ],
+    "answer": "Academic council leader"
+  },
+  "question12": {
+    "question": "How tall is eason?",
+    "choices": [
+      "160Cm",
+      "170Cm",
+      "163Cm",
+      "165Cm"
+    ],
+    "answer": "163cm"
+  },
+  "question13": {
+    "question": "What makes eason sad?",
+    "choices": [
+      "Not Getting Excellence",
+      "Saying Goodbye To Bed In The Morning",
+      "Knowing He Got An Assessment Due Tomorrow",
+      "All Of It Above"
+    ],
+    "answer": "All of it above"
+  },
+  "question14": {
+    "question": "What makes eason the happiest? ",
+    "choices": [
+      "Petting A Cat On The Street",
+      "Finding $20 On The Ground ",
+      "Eating Delicious Food",
+      "Getting Excellence"
+    ],
+    "answer": "Eating delicious food"
+  },
+  "question15": {
+    "question": "Which of these is the truth? ",
+    "choices": [
+      "Eason Plays Piano",
+      "Eason Is An Artist",
+      "Eason Is Old",
+      "Eason Is A Mad Scientist"
+    ],
+    "answer": "Eason is an artist"
+  },
+  "question16": {
+    "question": "When did Eason come to howick college?",
+    "choices": [
+      "Year 10",
+      "Year 9",
+      "Year 11",
+      "Year 12"
+    ],
+    "answer": "Year 10"
+  },
+  "question17": {
+    "question": "What is Eason going to wear to uni? ",
+    "choices": [
+      "Shirt",
+      "Hoodie ",
+      "Jacket",
+      "Suit"
+    ],
+    "answer": "Suit"
+  },
+  "question18": {
+    "question": "What topic of calculus does Eason like the most? ",
+    "choices": [
+      "Differentiation",
+      "Complex Numbers",
+      "Integration",
+      "Algebra"
+    ],
+    "answer": "Integration"
+  },
+  "question19": {
+    "question": "What does Eason dislike in programming? ",
+    "choices": [
+      "Classes",
+      "Tkinter",
+      "Files",
+      "Code Avenger"
+    ],
+    "answer": "Tkinter"
+  },
+  "question20": {
+    "question": "Is Eason your favorite person?",
+    "choices": [
+      "Yes",
+      "Meh",
+      "No (O N O )",
+      "He Is Cool"
+    ],
+    "answer": "Yes"
+  },
+  "question21": {
+    "question": "What is Easons main language? ",
+    "choices": [
+      "Mandarin",
+      "Cantonese",
+      "English",
+      "Korean"
+    ],
+    "answer": "Cantonese"
+  },
+  "question22": {
+    "question": "Which uni is Eason going to?",
+    "choices": [
+      "Uni Of Canterbury",
+      "Uni Of Otago",
+      "Uni Of Auckland",
+      "Aut"
+    ],
+    "answer": "Uni of auckland"
+  },
+  "question23": {
+    "question": "What is Easons dream pet",
+    "choices": [
+      "Cat",
+      "Dog",
+      "Duck",
+      "Bird"
+    ],
+    "answer": "Cat"
+  },
+  "question24": {
+    "question": "What is the name of Easons family business? ",
+    "choices": [
+      "Howick Chinese Takeaway",
+      "V8 Noodle Box",
+      "Sams Lunch Bar",
+      "The Bakery Shop"
+    ],
+    "answer": "V8 noodle box"
+  },
+  "question25": {
+    "question": "What month is Easons birthday?",
+    "choices": [
+      "September",
+      "June",
+      "August",
+      "December"
+    ],
+    "answer": "September"
+  }
+}
