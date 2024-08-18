@@ -1,6 +1,18 @@
 from tkinter import*
 from playsound import playsound
 import threading
+# phase 1 colour
+'''version 1: the program will only show the visuals of the boss image, health bars, and where the buttons are. 
+The buttons will not work at this stage. 
+
+version 1.1: I have acquired help from online and was able to use some code to create a gradient frame that make 
+my program cooler to look at. 
+
+version 1.2: I played around with the gradient frame and see what I could do with it
+
+version 2: I have added the first battle theme of the program. I have also chose the battle theme for phase 1 of Eason which is purple. 
+Sadly, the music does not stop after closing the GUI. 
+'''
 
 '''From https://github.com/JeanExtreme002/GradientFrame-Tkinter/blob/master/GradientFrame.py'''
 class GradientFrame(Canvas):
@@ -109,12 +121,11 @@ class MainBattle():
         button_height = 2
         button_font = ("Arial", "12", "bold")
         
-
         # setting up the main frame
         self.main_frame = Frame(bg="#221B27", padx=60)
         self.main_frame.grid()
         
-        # setting up GUI frame
+        # setting up battle frame
         self.battle_frame = GradientFrame(self.main_frame, relief=SOLID, borderwidth=2)
         self.battle_frame.grid(padx=5, pady=5, row=0)
 
@@ -154,9 +165,9 @@ class MainBattle():
 
         '''Stack overflow
         https://stackoverflow.com/questions/65541809/python3-playsound-tkinter-code-not-running-in-order-expected '''
-        threading.Thread(target=playsound, args=("c:\\Users\\eason\\Downloads\\Phase1song.mp3",)).start()
+        # threading allows the GUI and then music to play at the same time
+        threading.Thread(target=playsound, args=("c:\\Users\\eason\\OneDrive\\Desktop\\Internal programming\\Eason battle\\Phase1song.mp3",)).start()
 
-       
 
 
 root = Tk()
