@@ -1,5 +1,30 @@
 from tkinter import*
 import winsound
+'''version 1: the program will only show the visuals of the boss image, health bars, and where the buttons are. 
+The buttons will not work at this stage. 
+
+version 1.1: I have acquired help from online and was able to use some code to create a gradient frame that make 
+my program cooler to look at. 
+
+version 1.2: I played around with the gradient frame and see what I could do with it
+
+version 2: I have added the first battle theme of the program. I have also chose the colour theme for phase 1 of Eason which is purple. 
+Sadly, the music does not stop after closing the GUI. 
+
+version 2.1: I have chosen the colour theme for phase 2 of Eason which is blue and cyan. I made a version to keep track of the 
+colour codes
+
+version 2.2: I have chosen the colour theme for phase 3 of Eason which is dark red and red. I made a version to keep track of the
+colour codes
+
+verion 3: Since playsound only has one function which is to only play the sound, I decided to use alternative module which is 
+more versatile than playsound. The winsound module allows me to do much more than just play the sound. After downloading the 
+winsound module on my command prompt, I have put the code of winsound into my code. A problem I found with winsound is that 
+It cannot play MP3 audios. So in order to use winsound, I have to convert my battle theme into a wav file instead of the usual
+mp3 file. Even with the incrementation with winsound, the music still playing after the GUI is closed problem still have not been
+fixed. In this version I tried the stop function of winsound, after pressing enter on the terminal, the music stops. This may be
+useful to me later in my project. 
+'''
 
 '''From https://github.com/JeanExtreme002/GradientFrame-Tkinter/blob/master/GradientFrame.py'''
 class GradientFrame(Canvas):
@@ -112,7 +137,7 @@ class MainBattle():
         self.main_frame = Frame(bg="#221B27", padx=60)
         self.main_frame.grid()
         
-        # setting up GUI frame
+        # setting up battle frame
         self.battle_frame = GradientFrame(self.main_frame, relief=SOLID, borderwidth=2)
         self.battle_frame.grid(padx=5, pady=5, row=0)
 
@@ -151,13 +176,14 @@ class MainBattle():
         self.history_button.grid(row=1, column=1, columnspan=2)
 
         winsound.PlaySound("Phase1song.wav", winsound.SND_ASYNC) # if we don't have async then any code after the music will not be played. # it is similar to threading. 
-        input("press any key to stop sound")
+        input("press any key to stop sound") # entering any key in the terminal will stop the music
         winsound.PlaySound(None,0) # None in playsound will stop all sound from winsound. 0 because no flag is needed
         input("press any key to play the sound again")
         winsound.PlaySound("Phase1song.wav", winsound.SND_ASYNC)
         input("test to exit")
         winsound.PlaySound(None,0)
         print("Good bye!")
+
 
 
 
