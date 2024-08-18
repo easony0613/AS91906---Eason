@@ -1,5 +1,14 @@
 from tkinter import*
 
+'''version 1: the program will only show the visuals of the boss image, health bars, and where the buttons are. 
+The buttons will not work at this stage. 
+
+version 1.1: I have acquired help from online and was able to use some code to create a gradient frame that make 
+my program cooler to look at. 
+
+'''
+
+'''From https://github.com/JeanExtreme002/GradientFrame-Tkinter/blob/master/GradientFrame.py'''
 class GradientFrame(Canvas):
     
     """
@@ -105,7 +114,6 @@ class MainBattle():
         button_width = 12
         button_height = 2
         button_font = ("Arial", "12", "bold")
-        button_fg = "black"
         
         # setting up GUI frame
         self.battle_frame = GradientFrame(root, relief=SOLID, borderwidth=2)
@@ -145,7 +153,7 @@ class MainBattle():
         self.history_button = Button(self.button_frame, text="History / Info", bg="purple", width=button_width, height=button_height, font=button_font, relief=SOLID)
         self.history_button.grid(row=1, column=1, columnspan=2)
 
-
+# main program
 root = Tk()
 root.title("Hardest Fight with Eason")
 boss_image1 = PhotoImage(file="bossimage1.gif")
