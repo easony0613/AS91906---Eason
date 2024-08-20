@@ -37,7 +37,7 @@
       "Mr Irani",
       "Mrs Kaur"
     ],
-    "answer": "Mr irani"
+    "answer": "Mr Irani"
   },
   "question5": {
     "question": "What is Easons favorite anime? ",
@@ -47,7 +47,7 @@
       "Code Geass",
       "Fairy Tail"
     ],
-    "answer": "Dr stone"
+    "answer": "Dr Stone"
   },
   "question6": {
     "question": "What is Easons favorite hero in mlbb? ",
@@ -97,7 +97,7 @@
       "I Love Calculus",
       "Aaaa"
     ],
-    "answer": "Skidibi toilet"
+    "answer": "Skidibi Toilet"
   },
   "question11": {
     "question": "Which council leader is eason in howick college",
@@ -107,7 +107,7 @@
       "Cultural Council Leader",
       "Academic Council Leader"
     ],
-    "answer": "Academic council leader"
+    "answer": "Academic Council Leader"
   },
   "question12": {
     "question": "How tall is eason?",
@@ -117,7 +117,7 @@
       "163Cm",
       "165Cm"
     ],
-    "answer": "163cm"
+    "answer": "165Cm"
   },
   "question13": {
     "question": "What makes eason sad?",
@@ -127,7 +127,7 @@
       "Knowing He Got An Assessment Due Tomorrow",
       "All Of It Above"
     ],
-    "answer": "All of it above"
+    "answer": "All Of It Above"
   },
   "question14": {
     "question": "What makes eason the happiest? ",
@@ -137,7 +137,7 @@
       "Eating Delicious Food",
       "Getting Excellence"
     ],
-    "answer": "Eating delicious food"
+    "answer": "Eating Delicious Food"
   },
   "question15": {
     "question": "Which of these is the truth? ",
@@ -147,7 +147,7 @@
       "Eason Is Old",
       "Eason Is A Mad Scientist"
     ],
-    "answer": "Eason is an artist"
+    "answer": "Eason Is An Artist"
   },
   "question16": {
     "question": "When did Eason come to howick college?",
@@ -217,7 +217,7 @@
       "Uni Of Auckland",
       "Aut"
     ],
-    "answer": "Uni of auckland"
+    "answer": "Uni Of Auckland"
   },
   "question23": {
     "question": "What is Easons dream pet",
@@ -237,7 +237,7 @@
       "Sams Lunch Bar",
       "The Bakery Shop"
     ],
-    "answer": "V8 noodle box"
+    "answer": "V8 Noodle Box"
   },
   "question25": {
     "question": "What month is Easons birthday?",
@@ -248,5 +248,55 @@
       "December"
     ],
     "answer": "September"
+  },
+  "question26": {
+    "question": "Which one of these is the lie?",
+    "choices": [
+      "Eason Has A Sister",
+      "Eason Has Gotten Na",
+      "Eason Has Never Gotten A Detention",
+      "Eason Plays The Guitar"
+    ],
+    "answer": "Eason has never gotten a detention"
+  },
+  "question27": {
+    "question": "Who is better in basketball",
+    "choices": [
+      "Andrae",
+      "John",
+      "Eason",
+      "Denzel"
+    ],
+    "answer": "Andrae"
+  },
+  "question28": {
+    "question": "What is easons favourite colour?",
+    "choices": [
+      "Red",
+      "Blue",
+      "Yellow",
+      "Black"
+    ],
+    "answer": "Yellow"
+  },
+  "question29": {
+    "question": "Which game is eason godly at timezone& \"c:/program files/python311/python.exe\" \"c:/users/eason/onedrive/desktop/internal programming/eason battle/adding_quiz.py\"",
+    "choices": [
+      "Wangan Midnight",
+      "Ddr",
+      "Fishing",
+      "Taiko"
+    ],
+    "answer": "Ddr"
+  },
+  "question30": {
+    "question": "Who does eason play in valorant?",
+    "choices": [
+      "Jett",
+      "Phoenix",
+      "Chamber",
+      "Omen"
+    ],
+    "answer": "Chamber"
   }
 }
