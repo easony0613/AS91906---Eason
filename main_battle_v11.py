@@ -549,8 +549,8 @@ class Attack:
                     self.attack_quiz.destroy() # immediately closes the quiz window
                     self.restore_button() # the buttons in the main program will be back to normal
                     self.partner.main_feedback.config(text="Correct answer! You did 5 damage to Eason!") # updating and showing the new boss HP
-                    self.partner.boss_health.config(text=f"♥ ▬▬▬▬{BOSS_PERCENTAGE-50}%▬▬▬▬")
-                    BOSS_PERCENTAGE -= 50
+                    self.partner.boss_health.config(text=f"♥ ▬▬▬▬{BOSS_PERCENTAGE-5}%▬▬▬▬")
+                    BOSS_PERCENTAGE -= 5
 
                 elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 26: # when the boss reach between 50 and 26 HP, the phase changes
                     background_counter = 1 
