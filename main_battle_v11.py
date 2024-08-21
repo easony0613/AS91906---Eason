@@ -641,8 +641,8 @@ class Attack:
 
                     # updating and showing the new boss HP
                     self.partner.main_feedback.config(text="Correct answer! You did 5 damage to Eason!") 
-                    self.partner.boss_health.config(text=f"♥ ▬▬▬▬{BOSS_PERCENTAGE-10}%▬▬▬▬")
-                    BOSS_PERCENTAGE -= 10
+                    self.partner.boss_health.config(text=f"♥ ▬▬▬▬{BOSS_PERCENTAGE-5}%▬▬▬▬")
+                    BOSS_PERCENTAGE -= 5
 
                 # when the boss reach between 50 and 26 HP, the phase changes
                 elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 26: 
