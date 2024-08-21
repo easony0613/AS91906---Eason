@@ -82,7 +82,8 @@ from functools import partial
 import json
 import winsound
 
-counter = 1 # setting up the counter variable to count the amount of times the attack function is called
+counter = 1 # setting up the counter variable to count 
+# the amount of times the attack function is called
 background_counter = 0 # setting up the counter variable the count the amount of times the background changes
 BOSS_PERCENTAGE = 100
 PLAYER_PERCENTAGE = 100
@@ -113,10 +114,12 @@ phase3_button_frame_colour = "#1B0000"
 change_music = "yes"
 change_music2 = "yes"
 
-class Start():
-    '''this class will welcome the user and ask them to start the game'''
-    def __init__(self):
 
+class Start():
+    '''This class will welcome the user and ask them to start the game.'''
+
+    def __init__(self):
+        '''Sets up the frame for the starting window. '''
         title_font = ("Gothic", "20", "bold")
         text_font = ("Gothic", "10", "bold")
         button_font = ("Gothic", "15", "bold")
@@ -124,7 +127,9 @@ class Start():
         self.start_frame = Frame(bg=phase1)
         self.start_frame.grid()
 
-        self.start_heading = Label(self.start_frame, text="Welcome to your hardest fight with Eason", bg=phase1, font=title_font, fg="white")
+        self.start_heading = Label(self.start_frame, text="Welcome to your hardest fight with Eason", 
+                                   bg=phase1, font=title_font, fg="white")
+        
         self.start_heading.grid(row=0, padx=10, pady=10)
 
         credit_text = '''Phase 1 song: Suspicious Endeavors - LeviathanMusic
@@ -133,23 +138,31 @@ Phase 2 song: Battle against a true warrior - Toby Fox
 
 Phase 3 song: The Army of Minotaur - Makai Symphony  '''
         
-        self.credit = Label(self.start_frame, text=credit_text, bg=phase1, font=text_font, justify=CENTER, fg="#F7B900")
+        self.credit = Label(self.start_frame, text=credit_text,
+                        bg=phase1, font=text_font, justify=CENTER, fg="#F7B900")
+        
         self.credit.grid(row=1)
 
         self.start_image_label = Label(self.start_frame, image=start_image)
         self.start_image_label.grid(row=2, pady=10)
 
-        self.start_button = Button(self.start_frame, text="Start Game",fg="black", bg="#F7B900", relief=SOLID, font=button_font, 
+        self.start_button = Button(self.start_frame, text="Start Game",fg="black",
+                                   bg="#F7B900", relief=SOLID, font=button_font,
                                    height=2, width=20, command=self.start_battle)
+        
         self.start_button.grid(row=3, padx=10, pady=10)
     
     def start_battle(self):
-        '''this method starts the battle'''
+        '''This method starts the battle.'''
+
         self.start_frame.destroy()
         MainBattle()
 
+
 '''From https://github.com/JeanExtreme002/GradientFrame-Tkinter/blob/master/GradientFrame.py'''
 class GradientFrame(Canvas):
+    '''this gives me a gradient frame'''
+
     global background_counter
 
     """
@@ -248,9 +261,12 @@ class GradientFrame(Canvas):
     def configure(self, cnf = None, **kw):
         self.config(cnf, **kw)
 
+
 class MainBattle():
-    '''this class will show the main battle interface of the program'''
+    '''This class will show the main battle interface of the program.'''
+
     def __init__(self):
+        '''Sets up the frame for the main battle window. '''
         global background_counter
 
         # the attack button will be wider so I have made a variable to assign to make it wider
@@ -267,11 +283,16 @@ class MainBattle():
         self.main_frame.grid(sticky="SWE")
         
         # setting up GUI frame
-        self.battle_frame = GradientFrame(self.main_frame, colors=(phase1_colour1, phase1_colour2), relief=SOLID, borderwidth=2)
+        self.battle_frame = GradientFrame(self.main_frame, 
+                                          colors=(phase1_colour1, phase1_colour2),
+                                          relief=SOLID, borderwidth=2)
+        
         self.battle_frame.grid(padx=60, row=0)
 
         # boss health
-        self.boss_health = Label(self.battle_frame, text="♥ ▬▬▬▬100%▬▬▬▬", fg=phase1_boss_hp_colour, bg=phase1, font=("Arial", "20"), relief=SOLID, width=20)
+        self.boss_health = Label(self.battle_frame, text="♥ ▬▬▬▬100%▬▬▬▬", fg=phase1_boss_hp_colour, 
+                                 bg=phase1, font=("Arial", "20"), relief=SOLID, width=20)
+        
         self.boss_health.grid(padx=5, pady=5, row=1)
 
         # boss image
@@ -279,32 +300,49 @@ class MainBattle():
         self.image_label.grid(padx=5, pady=5, row=2)
 
         # feedback message
-        self.main_feedback = Label(self.battle_frame, text="Eason is currently happy", fg="red", bg="#C3B1E1", font=text_font, wraplength=300)
+        self.main_feedback = Label(self.battle_frame, text="Eason is currently happy", fg="red", 
+                                   bg="#C3B1E1", font=text_font, wraplength=300)
+        
         self.main_feedback.grid(row=3)
 
-        #player health
-        self.player_health = Label(self.battle_frame, text="♥ ▬▬▬▬100%▬▬▬▬", fg="green", bg=phase1, font=("Arial", "13"), relief=SOLID, width=25)
+        # player health
+        self.player_health = Label(self.battle_frame, text="♥ ▬▬▬▬100%▬▬▬▬", fg="green",
+                                    bg=phase1, font=("Arial", "13"), relief=SOLID, width=25)
+        
         self.player_health.grid(row=4)
 
-        #frame for buttons
-        self.button_frame = Frame(bg=phase1_button_frame_colour, relief=SOLID, borderwidth=2, padx=180, pady=2)
+        # frame for buttons
+        self.button_frame = Frame(bg=phase1_button_frame_colour, relief=SOLID,
+                                  borderwidth=2, padx=180, pady=2)
         self.button_frame.grid(row=5)
 
-        self.attack_button = Button(self.button_frame, text="Attack", bg="red", width=important_button_width, height=button_height, font=button_font, relief=SOLID, command=self.to_attack)
+        self.attack_button = Button(self.button_frame, text="Attack", bg="red",
+                                    width=important_button_width,
+                                     height=button_height, font=button_font, relief=SOLID, command=self.to_attack)
+        
         self.attack_button.grid(row=0, padx=5, pady=5)
 
 
-        self.help_button = Button(self.button_frame, text="Help / Info", bg="Orange", width=button_width, height=button_height, font=button_font, relief=SOLID, command=self.to_help)
+        self.help_button = Button(self.button_frame, text="Help / Info", bg="Orange",
+                                  width=button_width, 
+                                  height=button_height, font=button_font, relief=SOLID, command=self.to_help)
+        
         self.help_button.grid(row=1)
 
-        self.music = winsound.PlaySound("phase1song.wav", winsound.SND_ASYNC + winsound.SND_LOOP) # if we don't have async then any code after the music will not be played. # it is similar to threading. 
+        self.music = winsound.PlaySound("phase1song.wav", winsound.SND_ASYNC + winsound.SND_LOOP)
+        # if we don't have async then any code after the music will not be played. # it is similar to threading. 
     
+
     def to_help(self):
-        '''calls the displayhelp class'''
+        '''Calls the displayhelp class.'''
+
         DisplayHelp(self)
             
+
     def to_attack(self):
-        '''calls the attack class'''
+        '''Calls the attack class.'''
+
+
         Attack(self)
         # the program keep track of the amount of times the attack button is pressed to update the quiz along with the choices
         global counter
@@ -312,10 +350,16 @@ class MainBattle():
 
 
 class DisplayHelp:
-    '''this class create the help window pop up'''
+    '''This class create the help window pop up.'''
+
     def __init__(self, partner):
-        self.help_box = Toplevel() # Making a new window on top of an existing window
-        global background_counter # background counter to indicate when to change background
+        '''Sets up the frame for the help window'''
+
+        # making a new window on top of an existing window
+        self.help_box = Toplevel() 
+
+        # background counter to indicate when to change background
+        global background_counter 
 
         # disable the help button when clicked on
         partner.help_button.config(state=DISABLED)
@@ -328,7 +372,8 @@ class DisplayHelp:
 
         self.help_frame.grid()
 
-        self.help_heading_label = Label(self.help_frame, bg=phase1, text="Help / Info", font=("Arial", "14", "bold"), fg="white")
+        self.help_heading_label = Label(self.help_frame, bg=phase1, text="Help / Info",
+                                        font=("Arial", "14", "bold"), fg="white")
 
         self.help_heading_label.grid(row=0)
 
@@ -344,37 +389,50 @@ class DisplayHelp:
             for Eason to eat you alive. Good luck!
                 '''
         
-        self.help_text_label = Label(self.help_frame, bg=phase1, text=help_text, wraplength=350, justify=CENTER, fg="white")
+        self.help_text_label = Label(self.help_frame, bg=phase1, text=help_text,
+                                     wraplength=350, justify=CENTER, fg="white")
 
         self.help_text_label.grid(row=1, padx=10, pady=10)
 
-        self.dismiss_button = Button(self.help_frame, font=("Arial", "12", "bold"), text="Dismiss", bg="#CC6600", fg="white", command=partial(self.close_help, partner))
+        self.dismiss_button = Button(self.help_frame, font=("Arial", "12", "bold"), text="Dismiss", 
+                                     bg="#CC6600", fg="white", command=partial(self.close_help, partner))
 
         self.dismiss_button.grid(row=2, padx=10, pady=10)
 
-        if background_counter == 0: # if the background counter is 0, nothing happens
+        # if the background counter is 0, nothing happens
+        if background_counter == 0: 
             pass
-        elif background_counter == 1: # if the background counter is 1, the help window will change into the colour theme of phase 2
+
+        # if the background counter is 1, the help window will change into the colour theme of phase 2
+        elif background_counter == 1: 
             self.help_frame.config(bg=phase2)
             self.help_heading_label.config(bg=phase2)
             self.help_text_label.config(bg=phase2)
-        else:
-            self.help_frame.config(bg=phase3) # if the background counter increase again, the help window will change into the colour theme of phase 3
+
+        else: 
+            self.help_frame.config(bg=phase3) 
             self.help_heading_label.config(bg=phase3)
             self.help_text_label.config(bg=phase3)
 
+
     # closes the help dialogue(used by the cross and the dismiss button) 
     def close_help(self, partner):
-        '''this method closes help window'''
+        '''This method closes help window.'''
+
         # put help button back to normal
         partner.help_button.config(state=NORMAL)
         partner.attack_button.config(state=NORMAL)
         self.help_box.destroy()
 
+
 class Attack:
-    '''this class opens the quiz'''
+    '''This class opens the quiz.'''
+
     def __init__(self, partner):
-        self.attack_quiz = Toplevel() # Making a new window but this window will appear on top of the previous window
+        '''Sets up the frame for the quiz window. '''
+
+        # making a new window but this window will appear on top of the previous window
+        self.attack_quiz = Toplevel() 
 
         # creating a dictionary to hold the json file
         quiz = dict()
@@ -390,35 +448,47 @@ class Attack:
         # disable the attack button when clicked on
         self.disable_button()
 
-        # Making the frame for the quiz questions and choices
+        # making the frame for the quiz questions and choices
         self.quiz_frame = Frame(self.attack_quiz, width=300, height=200, bg=phase1)
 
         self.quiz_frame.grid()
 
         # the heading of the quiz window
-        self.quiz_heading = Label(self.quiz_frame, bg=phase1, text="Eason's Quiz", font=("Gothic", "15", "bold"), fg="white")
+        self.quiz_heading = Label(self.quiz_frame, bg=phase1, text="Eason's Quiz",
+                                  font=("Gothic", "15", "bold"), fg="white")
 
         self.quiz_heading.grid(row=0)
 
         # the question of the quiz
-        self.quiz_text = Label(self.quiz_frame, bg=phase1, text="", font=("Gothic", "15", "bold"), fg="white")
+        self.quiz_text = Label(self.quiz_frame, bg=phase1, text="",
+                               font=("Gothic", "15", "bold"), fg="white")
 
         self.quiz_text.grid(row=1)
 
         # the choices of the question
-        self.choice_text1 = Label(self.quiz_frame, bg=phase1, text="", font=("Gothic", "15", "bold"), fg="white")
+        self.choice_text1 = Label(self.quiz_frame, bg=phase1, text="", 
+                                  font=("Gothic", "15", "bold"), fg="white")
+        
         self.choice_text1.grid(row=2, pady=2)
 
-        self.choice_text2 = Label(self.quiz_frame, bg=phase1, text="", font=("Gothic", "15", "bold"), fg="white")
+        self.choice_text2 = Label(self.quiz_frame, bg=phase1, text="",
+                                  font=("Gothic", "15", "bold"), fg="white")
+        
         self.choice_text2.grid(row=3, pady=2)
 
-        self.choice_text3 = Label(self.quiz_frame, bg=phase1, text="", font=("Gothic", "15", "bold"), fg="white")
+        self.choice_text3 = Label(self.quiz_frame, bg=phase1, text="",
+                                  font=("Gothic", "15", "bold"), fg="white")
+        
         self.choice_text3.grid(row=4, pady=2)
 
-        self.choice_text4 = Label(self.quiz_frame, bg=phase1, text="", font=("Gothic", "15", "bold"), fg="white")
+        self.choice_text4 = Label(self.quiz_frame, bg=phase1, text="",
+                                  font=("Gothic", "15", "bold"), fg="white")
+        
         self.choice_text4.grid(row=5, pady=2)
 
-        self.feedback = Label(self.quiz_frame, bg=phase1, text="Please enter your answer in the box below", font=("Gothic", "10", "bold"), fg="green")
+        self.feedback = Label(self.quiz_frame, bg=phase1, 
+                              text="Please enter your number of choice in the box below", 
+                              font=("Gothic", "10", "bold"), fg="green")
         self.feedback.grid(row=6)
 
         # the entry box for the user to type in the answer of the question
@@ -426,30 +496,35 @@ class Attack:
         self.answer_entry.grid(row=7, pady=2)
 
         # the button for the answer to confirm and submit their answer
-        self.confirm_button = Button(self.quiz_frame, text="Confirm", bg="#F7B900", fg="black", width=12, height=2, font=("Gothic", "10", "bold"), command= self.confirm_answer)
+        self.confirm_button = Button(self.quiz_frame, text="Confirm", bg="#F7B900", fg="black",
+                                     width=12, height=2, font=("Gothic", "10", "bold"), command= self.confirm_answer)
+        
         self.confirm_button.grid(row=8, pady=5)
 
         # if background counter is not one yet, then no background will be changed
         if background_counter == 0: 
             pass
-        elif background_counter == 1: # when the background counter is 1, everything in the attack window will be changed into the theme of phase 2
+
+        # when the background counter is 1, everything in the attack window will be changed into the theme of phase 2
+        elif background_counter == 1: 
             self.quiz_frame.config(bg=phase2) 
-            self.quiz_heading.config(bg=phase2)
-            self.choice_text1.config(bg=phase2)
-            self.choice_text2.config(bg=phase2)
-            self.choice_text3.config(bg=phase2)
-            self.choice_text4.config(bg=phase2)
-            self.quiz_text.config(bg=phase2)
+            self.quiz_heading.config(bg=phase2, fg=phase2_boss_hp_colour)
+            self.choice_text1.config(bg=phase2, fg=phase2_boss_hp_colour)
+            self.choice_text2.config(bg=phase2, fg=phase2_boss_hp_colour)
+            self.choice_text3.config(bg=phase2, fg=phase2_boss_hp_colour)
+            self.choice_text4.config(bg=phase2, fg=phase2_boss_hp_colour)
+            self.quiz_text.config(bg=phase2, fg=phase2_boss_hp_colour)
             self.feedback.config(bg=phase2)
 
-        else: # when the background counter is more than 1, everything in the attack window will be changed into theme of phase 3
+        # when the background counter is more than 1, everything in the attack window will be changed into theme of phase 3
+        else:
             self.quiz_frame.config(bg=phase3)
-            self.quiz_heading.config(bg=phase3)
-            self.choice_text1.config(bg=phase3)
-            self.choice_text2.config(bg=phase3)
-            self.choice_text3.config(bg=phase3)
-            self.choice_text4.config(bg=phase3)
-            self.quiz_text.config(bg=phase3)
+            self.quiz_heading.config(bg=phase3, fg=phase3_boss_hp_colour)
+            self.choice_text1.config(bg=phase3, fg=phase3_boss_hp_colour)
+            self.choice_text2.config(bg=phase3, fg=phase3_boss_hp_colour)
+            self.choice_text3.config(bg=phase3, fg=phase3_boss_hp_colour)
+            self.choice_text4.config(bg=phase3, fg=phase3_boss_hp_colour)
+            self.quiz_text.config(bg=phase3, fg=phase3_boss_hp_colour)
             self.feedback.config(bg=phase3)
 
 
@@ -468,30 +543,40 @@ class Attack:
 
         self.choice_text4.config(text="4." + quiz[f"question{counter}"]["choices"][3])
 
+
     def restore_button(self):
-        '''restores the buttons back to normal'''
+        '''Restores the buttons back to normal.'''
+
         self.partner.attack_button.config(state=NORMAL)
         self.partner.help_button.config(state=NORMAL)
 
+
     def disable_button(self):
-        '''disables the buttons'''
+        '''Disables the buttons.'''
+
         self.partner.attack_button.config(state=DISABLED)
         self.partner.help_button.config(state=DISABLED)
 
+
     def close_attack(self, partner):
-        '''immediately ends the game if the user clicks on the cross'''
+        '''Immediately ends the game if the user clicks on the cross.'''
+
         self.disable_button()
         partner.main_feedback.config(text="You cheated by not answering any question. Game over, you lose")
         partner.player_health.config(text="♥ ▬▬▬▬0%▬▬▬▬")
         winsound.PlaySound(None,0)
         self.attack_quiz.destroy()
 
+
     def change_background(self):
-        '''change the background of the program'''
-        if background_counter == 0: # if changing background is not 1 yet, then nothing happens
+        '''Change the background of the program. '''
+
+        # if changing background is not 1 yet, then nothing happens
+        if background_counter == 0: 
             pass
 
-        elif background_counter == 1: # once background counter has gone up, everything in the program will be changed into phase 2 colours and image
+        # once background counter has gone up, everything in the program will be changed into phase 2 colours and image
+        elif background_counter == 1: 
             self.partner.main_frame.config(bg=phase2)
             self.partner.boss_health.config(bg=phase2)
             self.partner.player_health.config(bg=phase2)
@@ -501,8 +586,8 @@ class Attack:
             self.partner.button_frame.config(bg=phase2_button_frame_colour)
             self.partner.image_label.config(image=boss_image2)
             
-
-        else: # when the background increase again, everything in the program will be changed into phase 3 colours and image
+        # when the background increase again, everything in the program will be changed into phase 3 colours and image
+        else: 
             self.partner.main_frame.config(bg=phase3) 
             self.partner.boss_health.config(bg=phase3)
             self.partner.player_health.config(bg=phase3)
@@ -512,9 +597,11 @@ class Attack:
             self.partner.button_frame.config(bg=phase3_button_frame_colour)
             self.partner.image_label.config(image=boss_image3)
     
+
     def confirm_answer(self):
-        '''program checks the user's answer to the answer of the quiz and lets the user know
-        if they have gotten the question correct. And ask them to close the window using the cross'''
+        '''Program checks the user's answer to the answer of the quiz and lets the user know
+        if they have gotten the question correct. And ask them to close the window using the cross.'''
+
         with open("quiz.json") as f:
             quiz = json.load(f)
 
@@ -546,27 +633,38 @@ class Attack:
                 global change_music2
 
                 if BOSS_PERCENTAGE > 50:
-                    self.attack_quiz.destroy() # immediately closes the quiz window
-                    self.restore_button() # the buttons in the main program will be back to normal
-                    self.partner.main_feedback.config(text="Correct answer! You did 5 damage to Eason!") # updating and showing the new boss HP
-                    self.partner.boss_health.config(text=f"♥ ▬▬▬▬{BOSS_PERCENTAGE-5}%▬▬▬▬")
-                    BOSS_PERCENTAGE -= 5
+                    # immediately closes the quiz window
+                    self.attack_quiz.destroy() 
 
-                elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 26: # when the boss reach between 50 and 26 HP, the phase changes
+                    # the buttons in the main program will be back to normal
+                    self.restore_button() 
+
+                    # updating and showing the new boss HP
+                    self.partner.main_feedback.config(text="Correct answer! You did 5 damage to Eason!") 
+                    self.partner.boss_health.config(text=f"♥ ▬▬▬▬{BOSS_PERCENTAGE-10}%▬▬▬▬")
+                    BOSS_PERCENTAGE -= 10
+
+                # when the boss reach between 50 and 26 HP, the phase changes
+                elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 26: 
                     background_counter = 1 
-                    if change_music == "yes": # if change music is yes, then music change into phase 2 music
+
+                    # if change music is yes, then music change into phase 2 music
+                    if change_music == "yes": 
                         winsound.PlaySound("phase2song.wav", winsound.SND_ASYNC + winsound.SND_LOOP)
 
-                    self.change_background() # change phase
+                    # change phase
+                    self.change_background()
                     self.attack_quiz.destroy()
                     self.restore_button()
                     self.partner.main_feedback.config(text="Correct answer! You did 5 damage to Eason!")
                     self.partner.boss_health.config(text=f"♥ ▬▬▬▬{BOSS_PERCENTAGE-5}%▬▬▬▬")
                     BOSS_PERCENTAGE -= 5
-                    change_music = "no" # changing it to no so the phase2 music does not get played aagain when the user answer again
 
+                    # changing it to no so the phase2 music does not get played aagain when the user answer again
+                    change_music = "no" 
 
-                else: # when the boss reaches below 25hp, the phase change again
+                # when the boss reaches below 25hp, the phase change again
+                else: 
                     background_counter = 2
                     if change_music2 == "yes":
                         winsound.PlaySound("phase3song.wav", winsound.SND_ASYNC + winsound.SND_LOOP)
@@ -579,7 +677,8 @@ class Attack:
                     BOSS_PERCENTAGE -= 5
                     change_music2 = "no"
 
-                    if BOSS_PERCENTAGE <=0: # when the boss's health reach 0 hp, all the window closes and the window congratulating the user will show up
+                    # when the boss's health reach 0 hp, all the window closes and the window congratulating the user will show up
+                    if BOSS_PERCENTAGE <=0: 
                         self.attack_quiz.destroy()
                         self.partner.main_frame.destroy()
                         self.partner.button_frame.destroy()
@@ -588,21 +687,24 @@ class Attack:
             else:
                 global PLAYER_PERCENTAGE
 
-                if BOSS_PERCENTAGE > 50: # while the health of the boss is still more the 50, the boss only does 20 damage
+                # while the health of the boss is still more the 50, the boss only does 20 damage
+                if BOSS_PERCENTAGE > 50: 
                     self.attack_quiz.destroy()
                     self.restore_button()
                     self.partner.main_feedback.config(text="Wrong answer, Eason did 20 damage to you!")
                     self.partner.player_health.config(text=f"♥ ▬▬▬▬{PLAYER_PERCENTAGE-20}%▬▬▬▬")
                     PLAYER_PERCENTAGE -= 20
 
-                    if PLAYER_PERCENTAGE <=0: # if the player's health reaches 0 or less than zero after the boss attack, the player loses and the window laughing at the user will show up
+                    # if the player's health reaches 0 or less than zero after the boss attack
+                    # the player loses and the window laughing at the user will show up
+                    if PLAYER_PERCENTAGE <=0: 
                         self.attack_quiz.destroy()
                         self.partner.main_frame.destroy()
                         self.partner.button_frame.destroy()
                         Lose()
 
-                
-                elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 25: # if the health of the boss is below 50 and more than 25, the boss now does 40 damage
+                # if the health of the boss is below 50 and more than 25, the boss now does 40 damage
+                elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 25: 
                     self.attack_quiz.destroy()
                     self.restore_button()
                     self.partner.main_feedback.config(text="Eason is now angry, Eason did 40 damage to you!")
@@ -616,7 +718,8 @@ class Attack:
                         Lose()
             
                 else:
-                    self.attack_quiz.destroy() # if the health of the boss reaches below 25, the boss now does 80 damage
+                    # if the health of the boss reaches below 25, the boss now does 80 damage
+                    self.attack_quiz.destroy() 
                     self.restore_button()
                     self.partner.main_feedback.config(text="Eason is now furious, Eason did 80 damage to you!")
                     self.partner.player_health.config(text=f"♥ ▬▬▬▬{PLAYER_PERCENTAGE-80}%▬▬▬▬")
@@ -628,9 +731,12 @@ class Attack:
                         self.partner.button_frame.destroy()
                         Lose()
 
+
 class Win():
-    '''this class will show a window congratulating the user when they win'''
+    '''This class will show a window congratulating the user when they win.'''
+
     def __init__(self):
+        '''Sets up the frame for the winning window. '''
 
         title_font = ("Gothic", "20", "bold")
         text_font = ("Gothic", "10", "bold")
@@ -641,20 +747,29 @@ class Win():
         self.win_heading = Label(self.win_frame, text="YOU WON!", bg="#006B1E", font=title_font, fg="#F7B900")
         self.win_heading.grid(row=0, padx=5, pady=10)
 
-        self.win_text = Label(self.win_frame, text="YOU MUST HAVE CHEATED. HOW DID YOU BEAT THE COOLEST PERSON IN THE WORLD??!", font=text_font, bg="#006B1E", fg="#F7B900")
+        self.win_text = Label(self.win_frame, 
+                              text="YOU MUST HAVE CHEATED. HOW DID YOU BEAT THE COOLEST PERSON IN THE WORLD??!", 
+                              font=text_font, bg="#006B1E", fg="#F7B900")
+        
         self.win_text.grid(row=1, padx=5, pady=10)
 
         self.win_image = Label(self.win_frame, image=win_image, bg="#006B1E")
         self.win_image.grid(row=2, padx=5, pady=10)
 
-        self.instruction = Label(self.win_frame, text="You can close the window now", font=text_font, fg="white", bg="#006B1E")
+        self.instruction = Label(self.win_frame, 
+                                 text="You can close the window now", 
+                                 font=text_font, fg="white", bg="#006B1E")
+        
         self.instruction.grid(row=3, padx=5, pady=10)
 
         self.win_noise = winsound.PlaySound("Dying noise.wav", winsound.SND_ASYNC)
 
+
 class Lose():
-    '''this class will show a window laughing at the user when they lose'''
+    '''This class will show a window laughing at the user when they lose.'''
+
     def __init__(self):
+        '''Sets up the frame for the losing window. '''
         
         title_font = ("Gothic", "20", "bold")
         text_font = ("Gothic", "10", "bold")
@@ -662,20 +777,28 @@ class Lose():
         self.lose_frame = Frame(bg="#56575C")
         self.lose_frame.grid()
 
-        self.lose_heading = Label(self.lose_frame, text="YOU LOST!", bg="#56575C", font=title_font, fg="#F7B900")
+        self.lose_heading = Label(self.lose_frame, text="YOU LOST!", 
+                                  bg="#56575C", font=title_font, fg="#F7B900")
+        
         self.lose_heading.grid(row=0, padx = 5, pady=10)
 
-        self.lose_text = Label(self.lose_frame, text="YOU CANNOT BEAT THE COOLEST PERSON IN THE WORLD HAHAHAHAHAHA!!!", font=text_font, bg="#56575C", fg="#F7B900")
+        self.lose_text = Label(self.lose_frame,
+                               text="YOU CANNOT BEAT THE COOLEST PERSON IN THE WORLD HAHAHAHAHAHA!!!",
+                               font=text_font, bg="#56575C", fg="#F7B900")
+        
         self.lose_text.grid(row=1, padx=5, pady=10)
 
         self.lose_image = Label(self.lose_frame, image=loss_image, bg="#56575C")
         self.lose_image.grid(row=2, padx=5, pady=10)
 
-        self.instruction = Label(self.lose_frame, text="You can close the window now", font=text_font, fg="white", bg="#56575C")
+        self.instruction = Label(self.lose_frame, text="You can close the window now",
+                                font=text_font, fg="white", bg="#56575C")
+        
         self.instruction.grid(row=3, padx=5, pady=10)
 
         self.lose_noise = winsound.PlaySound("Laughing noise.wav", winsound.SND_ASYNC)
-        
+
+
 root = Tk()
 root.title("Hardest Fight with Eason")
 start_image = PhotoImage(file="startimage.gif")
