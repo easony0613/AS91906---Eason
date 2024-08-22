@@ -82,11 +82,11 @@ from functools import partial
 import json
 import winsound
 
+BOSS_PERCENTAGE = 100
+PLAYER_PERCENTAGE = 100
 counter = 1 # setting up the counter variable to count 
 # the amount of times the attack function is called
 background_counter = 0 # setting up the counter variable the count the amount of times the background changes
-BOSS_PERCENTAGE = 100
-PLAYER_PERCENTAGE = 100
 
 # the background of each phase
 phase1 = "#221B27"
@@ -645,7 +645,7 @@ class Attack:
                     BOSS_PERCENTAGE -= 5
 
                 # when the boss reach between 50 and 26 HP, the phase changes
-                elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 26: 
+                elif BOSS_PERCENTAGE <= 50 and BOSS_PERCENTAGE > 25: 
                     background_counter = 1 
 
                     # if change music is yes, then music change into phase 2 music
